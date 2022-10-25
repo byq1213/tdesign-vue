@@ -1,18 +1,8 @@
 <template>
   <t-space>
-    <!-- 共三种方式自定义浮层内容 -->
-
-    <!-- 使用 content 属性渲染浮层内容 -->
-    <t-space>
-      <t-popup content="可以在浮层内容中描述禁用原因">
-        <t-button variant="outline" disabled>禁用状态</t-button>
-      </t-popup>
-    </t-space>
-
-    <!-- 使用 content 插槽渲染浮层内容 -->
-    <!-- slot="content" 写法不建议使用，请使用 #content 写法 -->
-    <t-space>
-      <t-popup>
+    <div id="container">
+      <t-space>
+      <t-popup  attach="#container">
         <t-button variant="outline">触发元素</t-button>
         <!-- <t-space slot="content">触发元素是指触发浮层内容显示的元素</t-space> -->
         <template #content>
@@ -20,13 +10,10 @@
         </template>
       </t-popup>
     </t-space>
+    </div>
+    <!-- 共三种方式自定义浮层内容 -->
 
-    <!-- 使用 content 渲染函数输出浮层内容 -->
-    <t-space>
-      <t-popup :content="renderPopupContent">
-        <t-button variant="outline">浮层内容</t-button>
-      </t-popup>
-    </t-space>
+
   </t-space>
 </template>
 

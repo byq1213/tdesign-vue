@@ -120,10 +120,13 @@ export function removeClass(el: Element, cls: string): any {
 
 export const getAttach = (node: any, triggerNode?: any): HTMLElement => {
   const attachNode = typeof node === 'function' ? node(triggerNode) : node;
+  console.log('attachNode', attachNode)
   if (!attachNode) {
     return document.body;
   }
   if (isString(attachNode)) {
+    console.log('document', document)
+    console.log('document.querySelector(attachNode)', document.querySelector(attachNode))
     return document.querySelector(attachNode);
   }
   if (attachNode instanceof HTMLElement) {

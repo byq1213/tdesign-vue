@@ -110,8 +110,10 @@ export default Vue.extend({
           removeDom(elm);
         },
       });
+      console.log('this.attach', this.attach)
       // @ts-ignore
-      getAttach(this.attach, this.$refs?.triggerRef?.$el).appendChild(elm);
+      console.log('getAttach(this.attach, this.$refs?.triggerRef?.$el) :>> ', getAttach(this.attach, this.$refs?.triggerRef?.$el));
+      // getAttach(this.attach, this.$refs?.triggerRef?.$el).appendChild(elm);
       this.content.$mount(elm.children[0]);
     },
     unmountContent() {
